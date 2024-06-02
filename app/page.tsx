@@ -39,9 +39,9 @@ export default function Home() {
                             or service. It is built with Next.js, Tailwind CSS, and TypeScript.
                         </p>
                         <div className="flex flex-row justify-center items-center space-x-4 my-8">
-                            <Button>
+                            <Link href={'/login'}>
                                 Get Started
-                            </Button>
+                            </Link>
                             <Button variant="secondary">
                                 Learn More
                             </Button>
@@ -147,7 +147,9 @@ export default function Home() {
                                     </CardHeader>
                                     <CardContent>
                                         <Button className="w-full" variant={plan.fancy ? "default" : "secondary"}>
-                                            Get Started
+                                            <Link href={'/login'}>
+                                                Get Started
+                                            </Link>
                                         </Button>
                                     </CardContent>
                                     <CardFooter>

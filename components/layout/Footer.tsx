@@ -13,7 +13,9 @@ const Footer = () => {
                     </p>
                     <div className="items-center gap-x-3 space-y-3 sm:flex sm:justify-center sm:space-y-0">
                         <Button>
-                            Get started
+                            <Link href={'/login'}>
+                                Get Started
+                            </Link>
                         </Button>
                         <Button variant="secondary">
                             Learn more

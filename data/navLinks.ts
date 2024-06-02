@@ -3,13 +3,13 @@ export const navLinks = [
         title: "Home",
         href: "/",
     },
+    // {
+    //     title: "About",
+    //     href: "/about",
+    // },
     {
-        title: "About",
-        href: "/about",
-    },
-    {
-        title: "Services",
-        href: "/services",
+        title: "Explore",
+        href: "/explore",
     },
     {
         title: "Contact",

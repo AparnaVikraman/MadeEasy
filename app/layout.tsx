@@ -6,6 +6,13 @@ import Navbar from "@/components/layout/Navbar";
 import {ThemeProvider} from "@/app/theme-provider";
 import Footer from "@/components/layout/Footer";
 const font = Mulish({subsets: ["latin"]});
+import {
+    ClerkProvider,
+    SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+  } from '@clerk/nextjs'
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -14,14 +21,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: Readonly<{ children: React.ReactNode }>) {
     return (
-        <html lang="en" className="dark">
-        <body className={font.className}>
-        <ThemeProvider>
-            <Navbar/>
-            {children}
-            <Footer/>
-        </ThemeProvider>
-        </body>
+        <ClerkProvider>
+            <html lang="en" className="dark">
+            <body className={font.className}>
+                <ThemeProvider>
+                    <Navbar/>
+                    {children}
+                    {/* <Footer/> */}
+                </ThemeProvider>
+            </body>
         </html>
+
+        </ClerkProvider>
     );
 }

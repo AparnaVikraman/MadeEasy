@@ -2,6 +2,13 @@ import Link from "next/link";
 import {Button} from "@/components/ui/button";
 import {navLinks} from "@/data/navLinks";
 import {ThemeChanger} from "@/app/Theme-changer";
+import {
+    ClerkProvider,
+    SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+  } from '@clerk/nextjs'
 
 const Navbar = () => {
     return (
@@ -25,9 +32,14 @@ const Navbar = () => {
 
                 <div className="flex flex-row justify-end space-x-2">
                     <ThemeChanger/>
-                    <Button>
-                        Get Started
-                    </Button>
+                            <SignedOut>
+                                <SignInButton>
+                                    <button>Sign In</button>
+                                </SignInButton>
+                            </SignedOut>
+                            <SignedIn>
+                                <UserButton />
+                            </SignedIn>
                 </div>
             </div>
         </nav>
